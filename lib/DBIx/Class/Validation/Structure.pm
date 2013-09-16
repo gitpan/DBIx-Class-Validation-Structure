@@ -3,7 +3,7 @@ package DBIx::Class::Validation::Structure;
 use strict;
 use warnings;
 use 5.008_005;
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 use Email::Valid;
 use HTML::TagFilter;
@@ -282,5 +282,17 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =head1 SEE ALSO
+
+=over 8
+
+=item L<DBIx::Class>
+
+=item L<DBIx::Class::Validation>
+
+=item L<Email::Valid>
+
+=item L<HTML::TagFilter>
+
+=back
 
 =cut

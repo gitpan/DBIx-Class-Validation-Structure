@@ -28,3 +28,8 @@ LICENSE
     under the same terms as Perl itself.
 
 SEE ALSO
+    DBIx::Class
+    DBIx::Class::Validation
+    Email::Valid
+    HTML::TagFilter
+
