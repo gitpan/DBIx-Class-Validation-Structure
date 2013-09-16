@@ -1,0 +1,33 @@
+---
+abstract: 'DBIx::Class Validation based on the column meta data'
+author:
+  - 'Sean Zellmer <sean@lejeunerenard.com>'
+build_requires:
+  Test::More: 0.88
+configure_requires:
+  Module::Build::Tiny: 0.027
+dynamic_config: 0
+generated_by: 'Dist::Milla version v1.0.4, Dist::Zilla version 4.300038, CPAN::Meta::Converter version 2.131560'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: DBIx-Class-Validation-Structure
+no_index:
+  directory:
+    - t
+    - xt
+    - inc
+    - share
+    - eg
+    - examples
+requires:
+  DBIx::Class: 0
+  Email::Valid: 0
+  HTML::TagFilter: 0
+  perl: 5.008005
+resources:
+  bugtracker: https://github.com/lejeunerenard/DBIx-Class-Validation-Structure/issues
+  homepage: https://github.com/lejeunerenard/DBIx-Class-Validation-Structure
+  repository: https://github.com/lejeunerenard/DBIx-Class-Validation-Structure.git
+version: 0.04
