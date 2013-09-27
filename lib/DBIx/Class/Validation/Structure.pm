@@ -3,7 +3,7 @@ package DBIx::Class::Validation::Structure;
 use strict;
 use warnings;
 use 5.008_005;
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 use Email::Valid;
 use HTML::TagFilter;
@@ -40,6 +40,8 @@ sub validate {
             ($data{$column}, $error) = $columns->{$column}{validation_function}(
                info => $columns->{$column},
                value => $data{$column},
+               data => \%data,
+               self => $self,
             );
                if ( $error-> { msg } ) { push @error_list, { $column => $error->{ msg } }; }
          } else {
