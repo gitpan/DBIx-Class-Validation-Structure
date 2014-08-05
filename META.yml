@@ -32,4 +32,4 @@ resources:
   bugtracker: https://github.com/lejeunerenard/DBIx-Class-Validation-Structure/issues
   homepage: https://github.com/lejeunerenard/DBIx-Class-Validation-Structure
   repository: https://github.com/lejeunerenard/DBIx-Class-Validation-Structure.git
-version: '0.09'
+version: '0.10'
