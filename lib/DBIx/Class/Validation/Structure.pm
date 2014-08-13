@@ -3,7 +3,7 @@ package DBIx::Class::Validation::Structure;
 use strict;
 use warnings;
 use 5.008_005;
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 use Email::Valid;
 use HTML::TagFilter;
@@ -77,7 +77,7 @@ sub validate {
 
   unless (@error_list) {
     # Check the unique constraints
-    @error_list = check_uniques($self, \%data);
+    @error_list = check_uniques($self, \%data, $check_columns);
   }
 
   $self->set_columns(\%data);
@@ -102,6 +102,7 @@ sub primary_cols_have_changed {
 sub check_uniques {
   my $self = shift;
   my $data = shift;
+  my $check_columns = shift;
   my $source = $self->result_source;
   my %unique_constraints = $source->unique_constraints();
 
@@ -114,7 +115,9 @@ sub check_uniques {
     next if $constraint eq 'primary' and $self->in_storage and not primary_cols_have_changed($self);
 
     my $search = {
-      map { $_ => $data->{$_}, } @{ $unique_constraints{$constraint} }
+      map {
+        next unless ( not keys %$check_columns ) or $check_columns->{$_};
+        ($_ => $data->{$_}) } @{ $unique_constraints{$constraint} }
     };
 
     # Exclude this entries primary keys to the search for dupes
@@ -150,7 +153,7 @@ sub check_uniques {
 
   if ( %errors ) {
     # Convert hash into the array of hashrefs like the validate returns
-    return map { { $_ => join( ' and ', map { values $_ } @{ $errors{$_} } ) } } keys %errors;
+    return map { { $_ => join( ' and ', map { values %$_ } @{ $errors{$_} } ) } } keys %errors;
   } else {
     return ();
   }
