@@ -1,5 +1,9 @@
 Revision history for DBIx-Class-Validation-Structure
 
+0.12  2014-09-25 00:02:43 CDT
+        - Fixed tests for newer versions of perl ( < 5.18.0 )
+        - Combined unique error messages are consistently generated
+
 0.11  2014-08-13 10:48:56 CDT
         - Check Column custom selection applies to unique constraints now
         - Fix for using values with older versions of perl

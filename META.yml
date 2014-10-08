@@ -3,11 +3,12 @@ abstract: 'DBIx::Class Validation based on the column meta data'
 author:
   - 'Sean Zellmer <sean@lejeunerenard.com>'
 build_requires:
+  DBD::SQLite: '0'
   Test::DBIx::Class: '0'
   Test::More: '0.88'
   Test::Warnings: '0'
 configure_requires:
-  Module::Build::Tiny: '0.035'
+  Module::Build::Tiny: '0.038'
 dynamic_config: 0
 generated_by: 'Dist::Milla version v1.0.5, Dist::Zilla version 5.015, CPAN::Meta::Converter version 2.140640'
 license: perl
@@ -32,4 +33,4 @@ resources:
   bugtracker: https://github.com/lejeunerenard/DBIx-Class-Validation-Structure/issues
   homepage: https://github.com/lejeunerenard/DBIx-Class-Validation-Structure
   repository: https://github.com/lejeunerenard/DBIx-Class-Validation-Structure.git
-version: '0.11'
+version: '0.12'

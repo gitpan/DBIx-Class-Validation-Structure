@@ -3,7 +3,7 @@ package DBIx::Class::Validation::Structure;
 use strict;
 use warnings;
 use 5.008_005;
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 use Email::Valid;
 use HTML::TagFilter;
@@ -108,7 +108,7 @@ sub check_uniques {
 
   my %errors;
 
-  foreach my $constraint ( keys %unique_constraints ) {
+  foreach my $constraint ( sort keys %unique_constraints ) {
 
     # Skip the primary constraint uniqueness test if self is in_storage
     # and the primary columns haven't changed
